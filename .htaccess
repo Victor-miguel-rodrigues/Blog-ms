@@ -1,0 +1,27 @@
+
+RewriteEngine On
+
+# Desabilita listagem de diretórios
+Options -Indexes
+
+ServerSignature Off
+
+# Impede acesso a arquivos ocultos
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
+
+# Bloqueia arquivos sensíveis
+<FilesMatch "\.(env|ini|log|sql|bak|conf|dist)$">
+    Require all denied
+</FilesMatch>
+
+# Protege arquivos de dependências e configurações
+<FilesMatch "^(composer\.(json|lock)|package(-lock)?\.json)$">
+    Require all denied
+</FilesMatch>
+
+# Redireciona requisições para o index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [QSA]
