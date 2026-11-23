@@ -39,6 +39,8 @@ Design simples e chamativo em **preto, branco e azul**, com fonte monoespaçada 
 - HTML5, CSS3 e JavaScript (sem frameworks)
 - MySQL (planejado)
 - XAMPP (ambiente local)
+- SimplesRoute (composer require pecee/simple-router)
+- dontenv (composer require vlucas/phpdotenv)
 
 ## Estrutura do projeto
 
